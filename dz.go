@@ -1,4 +1,3 @@
-// dz
 package main
 
 import (
@@ -11,6 +10,10 @@ type client struct {
 }
 
 func transfer(cl1, cl2 *client, x float64) {
+	if cl1 == nil || cl2 == nil{
+		fmt.Println("некорректные данные пользователей")
+		return
+	}
 	if cl1.balans < x {
 		fmt.Println("Залезать в долги плохо!")
 	} else {
